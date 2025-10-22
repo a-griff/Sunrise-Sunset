@@ -1,0 +1,73 @@
+Sunrise-Sunset v1.0
+===================
+
+DESCRIPTION
+-----------
+Sunrise-Sunset calculates sunrise and sunset times for any latitude, longitude,
+and date using the NOAA solar position formulas. It accepts either command-line
+arguments or interactive input. The timezone offset is entered as a numeric
+value representing hours from UTC (for example, -5 for Eastern Time, +1 for
+Central European Time, +10 for Sydney).
+
+This release includes two fully equivalent versions:
+  • sunrise-sunset.bas  — FreeBASIC version (compiled executable)
+  • sunrise-sunset.pl   — Perl version (interpreted script)
+
+Either one can be used.  The FreeBASIC version produces a stand-alone binary
+suitable for use on any Linux distribution, while the Perl version runs directly
+from the command line without compilation.
+
+VERSION
+-------
+1.0
+
+REQUIREMENTS
+------------
+FreeBASIC version:
+  • Requires the FreeBASIC compiler (fbc)
+  • Produces a single native executable (no dependencies)
+
+Perl version:
+  • Requires Perl 5.x or later (standard on most Linux and BSD systems)
+
+USAGE
+-----
+Run interactively (asks for input):
+    sunrise-sunset
+
+Run with parameters:
+    sunrise-sunset 40.7128 -74.0060 2025 6 21 -5
+
+Show help:
+    sunrise-sunset -h
+    sunrise-sunset --help
+    sunrise-sunset -?
+
+(The same syntax applies to both the FreeBASIC and Perl versions.)
+
+COMPILING THE FREEBASIC VERSION
+-------------------------------
+1. Compile:
+       fbc sunrise-sunset.bas -x sunrise-sunset
+2. Run:
+       ./sunrise-sunset
+3. (Optional) Install it to your PATH:
+       sudo cp sunrise-sunset /usr/local/bin/
+
+RUNNING THE PERL VERSION
+------------------------
+1. Make it executable:
+       chmod +x sunrise-sunset.pl
+2. Run:
+       ./sunrise-sunset.pl
+   (or simply: perl sunrise-sunset.pl)
+
+NOTES
+-----
+- Timezone must be numeric only (e.g. -5, +1, +10)
+- Both versions produce identical output
+- No external dependencies or libraries are required
+
+LICENSE
+-------
+Public Domain / CC0 1.0 Universal
